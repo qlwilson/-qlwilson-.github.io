@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCL Gallery </title>
+<meta charset="utf-8">
+<link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+  <header>
+        <img src="images/logo.jpg" alt="Cripple Cruises logo." width="200" height="200">
+		<h1>Cripple Cruises</h1>
+  </header>
+  <nav>
+  <ul> 
+    <li><a href="index.html">Home</a></li>
+	<li><a href="rooms/suites.html">Suites</a></li>
+	<li><a href="rooms/standard.html">Standard Rooms</a></li>
+	<li><a href="events/weekend.html">Weekend Events</a></li>
+	<li><a href="gallery.html">Gallery</a></li>
+	<li><a href="contact.html">Contact</a></li>
+  </ul>
+  </nav>
+ <main>
+ <h2> Cripple Cruise Lines Gallery </h2>
+ <p> Browse our gallery to see how our ships are built to eliminate typical barriers, ensuring that every guest can explore, relax, and enjoy themselves with complete confidence and dignity. We are proud to create a space where travelers with disabilities, their families, and their caregivers can enjoy a true, carefree vacation.</p>  
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+.container {
+	position: relative;
+}
+.mySlides {
+	display: one;
+}
+.cursor
+	cursor: pointer;
+}
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  float: left;
+  width: 16.66%;
+}
+.demo {
+  opacity: 0.6;
+}
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+<body>
+<h2 style="text-align:center">Accessible Adventures. Unforgettable Memories.</h2>
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+      <img src="gallery/auditorium.png" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+      <img src="gallery/companyRetreats.png" style="width:100%">
+  </div> 
+   <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+      <img src="gallery/prisonCourt.png" style="width:100%">
+  </div>     
+   <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+      <img src="gallery/view.png" style="width:100%">
+  </div> 
+    <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+      <img src="gallery/workoutRoom.png" style="width:100%">
+  </div>  
+    <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+      <img src="gallery/zenRoom.png" style="width:100%">
+  </div>  
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="gallery/auditorium.PNG" style="width:100%" onclick="currentSlide(1)" alt="Auditorium">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="gallery/companyRetreats.PNG" style="width:100%" onclick="currentSlide(2)" alt="Company Retreats">
+    </div>
+	    <div class="column">
+      <img class="demo cursor" src="gallery/prisonCourt.PNG" style="width:100%" onclick="currentSlide(3)" alt="Prison Court">
+    </div>
+	    <div class="column">
+      <img class="demo cursor" src="gallery/view.PNG" style="width:100%" onclick="currentSlide(4)" alt="View from Deck">
+    </div>
+	    <div class="column">
+      <img class="demo cursor" src="gallery/workoutRoom.PNG" style="width:100%" onclick="currentSlide(5)" alt="Workout Room">
+    </div>
+	    <div class="column">
+      <img class="demo cursor" src="gallery/zenRoom.PNG" style="width:100%" onclick="currentSlide(6)" alt="Zen Room">
+    </div>
+  </div>
+</div>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script> 
+  </main>  
+  <footer>
+  Copyright &copy; 2025<br>
+  <a href="mailto:qlwilson@amarillocollege.com">Quinten Wilson</a>
+  </footer>
+</div>
+</body>
+</html>
